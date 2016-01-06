@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">STVideo Sample</string>
+    <string name="power_tag">Powered by Sunteng</string>
+    <string name="full_video">全屏视频广告</string>
+    <string name="common_video">窗口视频广告</string>
+    <string name="small_window">小窗口视频广告</string>
+    <string name="large_window">大窗口视频广告</string>
+
+</resources>
