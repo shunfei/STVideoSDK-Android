@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--/storage/emulated/0/Android/data/com.sunteng.sdk.video/files/SVideo/-->
+    <!--把path中{{com.sunteng.sdk.video}}部分替换成项目的包名
+        path = "Android/data/{{包名}}/files/SVideo/" !-->
+    <external-path name="sunteng_video_sdk_download_apk" path="Android/data/com.sunteng.videoadsample/files/SVideo/"/>
+</paths>
