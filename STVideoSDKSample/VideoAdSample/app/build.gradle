@@ -1,6 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'sunteng'
+            keyPassword 'bai1994'
+            storeFile file('/Users/baishixian/keystore/release-sign-key.jks')
+            storePassword 'bai1994'
+        }
+    }
     compileSdkVersion 25
     buildToolsVersion "25.0.0"
     defaultConfig {
@@ -26,5 +34,5 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:24.2.1'
     testCompile 'junit:junit:4.12'
-    compile files('libs/STVideoSDK-2.0.3.jar')
+    compile files('libs/STVideoSDK-2.0.4.jar')
 }

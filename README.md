@@ -5,6 +5,10 @@
 - [Getting Started with STVideoSDK](https://github.com/shunfei/STVideoSDK-Android/blob/master/Docs/Getting_Started.md)
 
 ## Change Log
+12/07/2016 - v2.0.4
+* New support Https.
+* Modify UI impression.
+
 11/09/2016 - v2.0.3
 * Update API.
 * New support Security verification

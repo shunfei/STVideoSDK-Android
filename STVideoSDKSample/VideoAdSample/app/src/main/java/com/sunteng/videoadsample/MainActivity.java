@@ -36,6 +36,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //避免非静默安装apk文件时，导致按home键退到后台再点击图标进入程序出现的内容展示错误。
+        if (!isTaskRoot()){
+            finish();
+            return;
+        }
+
         setContentView(R.layout.activity_main);
 
         mContext = this;
