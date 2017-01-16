@@ -11,16 +11,28 @@
 
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:gravity="center"
-        android:orientation="vertical">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:id="@+id/linearLayout">
+
+        <Button
+                android:text="请求加载视频广告"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/linearLayout"
+                android:layout_centerHorizontal="true"
+                android:padding="@dimen/button_dimen"
+                android:layout_marginTop="@dimen/button_dimen"
+                android:id="@+id/bt_load_video"/>
 
         <Button
             android:id="@+id/bt_fullVideo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/button_dimen"
             android:padding="@dimen/button_dimen"
             android:text="@string/full_video"
             />

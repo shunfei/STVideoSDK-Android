@@ -29,17 +29,23 @@
 **1.在7.0中下载安装apk文件共享必须使用FileProvider，所以需要在AndroidManifest.xml配置如下代码：**
 
 	<!-- 配置provider用于适配7.0, authorities的{{com.sunteng.sdk.video}}部分替换成当前应用包名，
-         authorities = "{{BuildConfig.APPLICATION_ID}}.download.STVideoSdk.fileProvider" ,
+         authorities = "{{BuildConfig.APPLICATION_ID}}.download.fileProvider" ,
           provider_paths为创建在xml文件夹内的资源文件 -->
         <provider
             android:name="android.support.v4.content.FileProvider"
-            android:authorities= "com.sunteng.sdk.video.download.STVideoSdk.fileProvider"
+            android:authorities= "com.sunteng.sdk.video.download.fileProvider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths"/>
         </provider>
+        
+
+> 注意：如果你的项目之前已经在AndroidManifest.xml配置过FileProvider，sdk也提供了在代码中统一配置FileProvider的接口设置authorities:
+
+` public static void setFileProviderAuthorities(String authorities);`
+
 
 **2.可以看到上面在AndroidManifest.xml的<meta-data中，定义了一个资源路径，第二步就是创建res/xml/provider_paths.xml文件：**
 > **注意：只需把path中{{com.sunteng.sdk.video}}部分替换成你当前项目的包名，复制到文件中即可。**
@@ -55,9 +61,9 @@
 
 - **调用全局初始化sdk：**
 
-		MobileAdSDK.initSDKWithPublishedID(String publisherId, String appId, int placementId, String appKey)
+		MobileAdSDK.initSDKWithPublishedID(String AdUnitId, String AppSecret)
  > **注意:**
- > 从Sunteng获取publisherID & appID & placementId & appKey
+ > 从Sunteng获取AdUnitId & AppSecret
  
 - **开启debug模式**
 > 用于测试阶段日志输出控制，设置logcat过滤器tag为“videoSdk”。

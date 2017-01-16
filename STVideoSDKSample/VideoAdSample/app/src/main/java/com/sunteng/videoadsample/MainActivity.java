@@ -24,12 +24,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static final int FULL_VIEWID = 109;
 
     /**
-     * 从sunteng网站申请获取publisherId, appId, placementId, APP_KEY
+     * 从sunteng网站申请获取AdUnitID
      *
      */
-    public static final String PUBLISHERID = "2";
-    public static final String APPID = "38";
-    public static final int PLACEMENTID = 42;
+    public static final String AdUnitID = "2-38-42";
     public static final String APP_KEY = "8hME_QwQ2GkZT9.VDIwvwSY4*Skjg?Uf";
 
 
@@ -48,8 +46,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mContext = this;
 
         // 初始化sdk，程序启动的时候调用
-        // 参数：从商务人员获取的publisherId, appId, placementId
-        MobileAdSDK.initSDKWithPublishedID(PUBLISHERID, APPID, PLACEMENTID, APP_KEY);
+        // 参数：从商务人员获取的AdUnitID
+        MobileAdSDK.initSDKWithPublishedID(AdUnitID, APP_KEY);
 
         //若是在测试时使用，需开启debug模式，可查看日志输出
         //参数： isDebug 传入true开启
@@ -59,14 +57,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //参数： isLocationEnable 传入true开启
         MobileAdSDK.setLocationEnable(true);
 
+        // 调用该方法可以设置FileProvider，需同manifest一起更改
+        // MobileAdSDK.setFileProviderAuthorities("com.videoAd.sample");
+
 
         //创建一个全屏模式视频广告组件
         //参数：视频广告的视图id viewid
         fullModelVideoAd = MobileAdSDK.createFullModelVideoAd(FULL_VIEWID);
 
-        //预加载视频广告
+       /* //预加载视频广告
         //参数：播放页面的Activity 成功播放广告视频或发生错误均会回调的广告监听器VideoAdRequestListener 强制预加载为true
-        fullModelVideoAd.preDownloadResource(this, videoAdRequestListener, true);
+        fullModelVideoAd.preDownloadResource(this, videoAdRequestListener, true);*/
 
         //初始化View
         initView();
@@ -77,6 +78,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      * view组件初始化
      */
     private void initView() {
+        findViewById(R.id.bt_load_video).setOnClickListener(this);
         findViewById(R.id.bt_fullVideo).setOnClickListener(this);
         findViewById(R.id.bt_Video).setOnClickListener(this);
     }
@@ -85,16 +87,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         @Override
         public void onRequestSucceed(int viewId) {
             Log.i("VideoSdkSample","viewId onRequestSucceed");
+            Toast.makeText(MainActivity.this,"视频广告请求成功",Toast.LENGTH_SHORT).show();
         }
 
         @Override
         public void onRequestFail(int viewId, int code) {
-            Tool.showToast(mContext, viewId, code);
+            Toast.makeText(MainActivity.this,"视频广告请求失败",Toast.LENGTH_SHORT).show();
         }
 
         @Override
         public void onAdResourceReady(int viewId) {
             Log.i("VideoSdkSample","viewId onAdResourceReady");
+            Toast.makeText(MainActivity.this,"视频广告资源准备好",Toast.LENGTH_SHORT).show();
         }
     };
 
@@ -106,7 +110,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 //参数：当前activity的context 成功播放广告视频或发生错误均会回调的广告监听器VideoAdListener
                 fullModelVideoAd.showVideo(mContext, videoAdListener);
                 break;
-
+            case R.id.bt_load_video:
+                //请求视频广告
+                fullModelVideoAd.preDownloadResource(this, videoAdRequestListener, true);
+                break;
             case R.id.bt_Video:
                 //打开播放窗口模式的视频广告
                 startActivity(new Intent(MainActivity.this, PlayActivity.class));

@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">VideoAdSample</string>
     <string name="power_tag">Video</string>
-    <string name="full_video">全屏视频广告</string>
-    <string name="common_video">窗口视频广告</string>
+    <string name="full_video">展示全屏视频广告</string>
+    <string name="common_video">展示窗口视频广告</string>
     <string name="small_window">小窗口视频广告</string>
     <string name="large_window">大窗口视频广告</string>
 </resources>

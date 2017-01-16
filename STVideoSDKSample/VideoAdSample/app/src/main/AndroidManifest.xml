@@ -38,7 +38,7 @@
         <!-- 配置provider用于适配7.0, authorities的值固定， provider_paths为创建在xml文件夹内的资源文件 -->
         <provider
             android:name="android.support.v4.content.FileProvider"
-            android:authorities="com.sunteng.videoadsample.download.STVideoSdk.fileProvider"
+            android:authorities="com.sunteng.videoadsample.download.fileProvider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
