@@ -1,4 +1,4 @@
-# 视频广告SDK android SDK 2.0.3 开发文档
+# 视频广告SDK android SDK 2.0.7 开发文档
 ### 1、导入sdk
 	将sdk的jar文件导入到工程指定的libs目录，添加引用支持即可。
 ### 2、权限配置

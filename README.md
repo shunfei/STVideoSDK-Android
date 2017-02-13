@@ -11,7 +11,12 @@
 
 ## Change Log
 
-01/16/2016 - [v2.0.6](https://github.com/shunfei/STVideoSDK-Android/releases/tag/v2.0.6)
+02/13/2017 - [v2.0.7](https://github.com/shunfei/STVideoSDK-Android/releases/tag/v2.0.7)
+
+* Fix bug
+* Improve performance
+
+01/16/2017 - [v2.0.6](https://github.com/shunfei/STVideoSDK-Android/releases/tag/v2.0.6)
 
 * Update API.
 
