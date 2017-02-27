@@ -1,4 +1,4 @@
-# 视频广告SDK android SDK 2.0.7 开发文档
+# 视频广告SDK android SDK 2.0.8 开发文档
 ### 1、导入sdk
 	将sdk的jar文件导入到工程指定的libs目录，添加引用支持即可。
 ### 2、权限配置
@@ -74,6 +74,16 @@
 	    */
 	    MobileAdSDK.setDebug(boolean isDebug)
  	
+- **控制播放中关闭广告功能**
+> 用于控制视频播放界面左上脚关闭按钮是否展示的开关，默认开启，用户可以在播放中点击关闭按钮关闭广告。
+
+		/**
+	    * 播放界面左上角的关闭按钮控制，默认开启
+	    * @param closeVideoEnable 传入 false 关闭
+	    */
+	    MobileAdSDK.setCloseVideoEnable(boolean closeVideoEnable);
+       
+
 
 ###5、创建视频广告位
 > 导入sdk包：import com.sunteng.sdk.api.MobileAdSDK;

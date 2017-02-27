@@ -49,6 +49,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // 参数：从商务人员获取的AdUnitID
         MobileAdSDK.initSDKWithPublishedID(AdUnitID, APP_KEY);
 
+        // 设置在播放中用户是否可以通过点击左上角的按钮关闭视频，默认开启
+        MobileAdSDK.setCloseVideoEnable(false);
+
         //若是在测试时使用，需开启debug模式，可查看日志输出
         //参数： isDebug 传入true开启
         MobileAdSDK.setDebug(true);

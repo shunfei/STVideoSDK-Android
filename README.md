@@ -11,6 +11,11 @@
 
 ## Change Log
 
+
+02/27/2017 - [v2.0.8](https://github.com/shunfei/STVideoSDK-Android/releases/tag/v2.0.8)
+
+* New Support Contorl Close Video Interface.
+
 02/13/2017 - [v2.0.7](https://github.com/shunfei/STVideoSDK-Android/releases/tag/v2.0.7)
 
 * Fix bug
